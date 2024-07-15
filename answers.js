@@ -1,5 +1,4 @@
 //question2
-
 function getFirstNDishNames(orders, no) {
   return (last = orders
     .slice(0, no)
@@ -45,4 +44,10 @@ function getTotalRatingsForChefs(orders) {
   });
 }
 console.log(getTotalRatingsForChefs(orders));
-//question8:
+//question1
+function getHighRatedDishes() {
+  const dishes = orders
+    .filter((orders) => orders.ratings.every((n) => n.ratings) < 4)
+    .map((dishname) => dishname.dishName);
+  return dishes.join(", ");
+}
